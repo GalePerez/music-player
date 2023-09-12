@@ -199,6 +199,7 @@ a {
     font-size: 16px;
     padding: 20px;
     margin-bottom: 100px;
+    border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.17);
     
 }
@@ -244,4 +245,6 @@ a {
     border-radius: 5px;
     border: 3px none #2e0000;
   }
+
+
 
