@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    background: rgb(44,0,68);
+    background: linear-gradient(180deg, rgba(44,0,68,1) 8%, rgba(106,0,103,1) 50%, rgba(224,153,153,1) 100%);
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.music-container {
+    background-color: rgba(255, 255, 255, 0.547);
+    border-radius: 20px;
+    width: 300px;
+    padding: 0 30px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.music-name {
+    text-align: center;
+    font-size: 16px;
+    margin: 0 10px 5px 10px;
+}
+
+.artist-name {
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.music-photo {
+    width: 250px;
+
+}
+
+.song-slider {
+    width: 100%;
+    position: relative;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 16px;
+    background: rgb(97, 0, 110);
+    box-shadow: -500px 0 0 500px rgb(97, 0, 110);
+}
+
+.current-time, 
+.song-duration {
+    font-size: 14px;
+}
+
+.song-duration {
+    position: absolute;
+    right: 0;
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.play-btn {
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(97, 0, 110);
+    border: none;
+}
+
+/* Play-Pause Btn Animation START */
+.play-btn span {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background: white;
+    transition: .5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.play-btn span:nth-child(2) {
+    left: 60%;
+    transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1) {
+    width: 35%;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
+}
+
+.play-btn.pause {
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0;
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(249, 99, 231, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgb(80, 0, 102, 0.4);
+    }
+}
+
+/* Play-Pause Btn Animation END */
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 20px;
+
+}
+
+/* Right Container START */
+
+.songs-container {
+    width: 600px;
+    height: 500px;
+    margin-left: 50px;
+    overflow: auto;
+    overflow-x: hidden;
+
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    color: white;
+    z-index: 10;
+    backdrop-filter: blur(30px);
+}
+
+.navbar p {
+    margin: 10px 25px;
+}
+
+.songs-container h2 {
+    color: white;
+    margin: 20px;
+}
+
+.lyrics {
+    margin: 20px;
+    height: 300px;
+    overflow: auto;
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.17);
+    
+}
+
+.other-albums, .related-artists{
+    position: relative;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    margin-bottom: 100px;
+    padding: 20px;
+    width: 550px;
+    border-radius: 20px;
+    background-color: #0000005e;
+    color: white;
+    font-size: 12px;
+}
+
+
+.other-albums img, .related-artists img{
+    width: 200px;
+    height: 200px;
+    margin: 10px 20px;
+}
+
+.other-albums p, .related-artists p{
+    margin: 0 20px;
+}
+
+
+/* Scroll Bar */
+*::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #2e004d04;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffffff90;
+    border-radius: 5px;
+    border: 3px none #2e0000;
+  }
+
